@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Wp Plugin Product View
- * Description:     Example block written with ESNext standard and JSX support – build step required.
+ * Description:     This plugin demostrates the minimum structure needed to build a library of custom blocks in Wordpress
  * Version:         0.2.0
  * Author:          Gang Gao (gaogang@gmail.com)
  * License:         GPL-2.0-or-later
@@ -12,8 +12,6 @@
 /**
  * Registers all block assets so that they can be enqueued through the block editor
  * in the corresponding context.
- *
- * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/applying-styles-with-stylesheets/
  */
 function init_product_view_blocks() {
 	$dir = __DIR__;
@@ -33,13 +31,15 @@ function init_product_view_blocks() {
 		$script_asset['version']
 	);
 
-	register_block_type( 'create-block/wp-plugin-product-view-categories', array(
+	// Register the first block type - product categories
+	register_block_type('create-block/wp-plugin-product-view-categories', array(
 		'editor_script' => 'create-block-wp-plugin-product-view-block-editor'
 	));
 
-	register_block_type( 'create-block/wp-plugin-product-view-product-list', array(
+	// Register the second block type - product list
+	register_block_type('create-block/wp-plugin-product-view-product-list', array(
 		'editor_script' => 'create-block-wp-plugin-product-view-block-editor'
 	));
 }
 
-add_action( 'init', 'init_product_view_blocks' );
+add_action('init', 'init_product_view_blocks');
