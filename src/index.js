@@ -1,9 +1,11 @@
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as categories from './block-library/categories'
+import * as productList from './block-library/productList'
 
 const registerBlocks = [
-    categories
+    categories,
+    productList
 ];
 
 // register all the pre-defined blocks

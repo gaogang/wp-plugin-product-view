@@ -36,6 +36,10 @@ function init_product_view_blocks() {
 	register_block_type( 'create-block/wp-plugin-product-view-categories', array(
 		'editor_script' => 'create-block-wp-plugin-product-view-block-editor'
 	));
+
+	register_block_type( 'create-block/wp-plugin-product-view-product-list', array(
+		'editor_script' => 'create-block-wp-plugin-product-view-block-editor'
+	));
 }
 
 add_action( 'init', 'init_product_view_blocks' );
